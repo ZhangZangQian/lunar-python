@@ -99,3 +99,50 @@ class DaYun:
         for i in range(0, n):
             xiao_yun.append(XiaoYun(self, i, self.__yun.isForward()))
         return xiao_yun
+
+    def getCangGanShiShen(self, gan: str):
+        """
+        获取藏干十神
+        :param gan: 日元
+        :return: 藏干十神
+        """
+        cg = LunarUtil.ZHI_HIDE_GAN.get(self.getGanZhi()[1])
+        arr = []
+        for cg_gan in cg:
+            arr.append(LunarUtil.SHI_SHEN.get(gan + cg_gan))
+        return arr
+
+    def getCangGanShiShenShort(self, gan: str):
+        """
+        获取藏干十神简称
+        :param gan: 日元
+        :return: 藏干十神简称
+        """
+        cg = LunarUtil.ZHI_HIDE_GAN.get(self.getGanZhi()[1])
+        arr = []
+        for cg_gan in cg:
+            arr.append(LunarUtil.SHI_SHEN_SHORT.get(gan + cg_gan))
+        return arr
+
+    def getShiShen(self, gan: str):
+        """
+        获取天干十神
+        :param gan: 日元
+        :return: 十神
+        """
+        return LunarUtil.SHI_SHEN.get(gan + self.getGanZhi()[0])
+    
+    def getShiShenShort(self, gan: str):
+        """
+        获取天干十神简称
+        :param gan: 日元
+        :return: 十神简称
+        """
+        return LunarUtil.SHI_SHEN_SHORT.get(gan + self.getGanZhi()[0])
+
+    def getCangGan(self):
+        """
+        获取藏干
+        :return: 藏干
+        """
+        return LunarUtil.ZHI_HIDE_GAN.get(self.getGanZhi()[1])

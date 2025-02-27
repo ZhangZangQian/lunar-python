@@ -59,3 +59,23 @@ class LiuNian:
         for i in range(0, n):
             liu_yue.append(LiuYue(self, i))
         return liu_yue
+
+    def getShiShen(self, gan: str):
+        """
+        获取天干十神
+        :param gan: 日元
+        :return: 十神
+        """
+        return LunarUtil.SHI_SHEN.get(gan + self.getGanZhi()[0])
+    
+    def getShiShenShort(self, gan: str):
+        """
+        获取天干十神简称
+        :param gan: 日元
+        :return: 十神简称
+        """
+        cg = LunarUtil.ZHI_HIDE_GAN.get(self.getGanZhi()[1])
+        arr = []
+        for cg_gan in cg:
+            arr.append(LunarUtil.SHI_SHEN_SHORT.get(gan + cg_gan))
+        return arr
