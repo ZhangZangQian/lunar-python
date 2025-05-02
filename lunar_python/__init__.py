@@ -19,3 +19,4 @@ from .FotoFestival import FotoFestival
 from .Foto import Foto
 from .TaoFestival import TaoFestival
 from .Tao import Tao
+from .util.LunarUtil import LunarUtil

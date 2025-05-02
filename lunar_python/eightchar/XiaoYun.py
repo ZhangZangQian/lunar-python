@@ -53,3 +53,10 @@ class XiaoYun:
         :return: 旬空(空亡)
         """
         return LunarUtil.getXunKong(self.getGanZhi())
+
+    def getNaYin(self):
+        """
+        获取纳音
+        :return: 纳音
+        """
+        return LunarUtil.NAYIN.get(self.getGanZhi())

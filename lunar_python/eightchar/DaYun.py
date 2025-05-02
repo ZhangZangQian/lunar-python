@@ -146,3 +146,12 @@ class DaYun:
         :return: 藏干
         """
         return LunarUtil.ZHI_HIDE_GAN.get(self.getGanZhi()[1])
+
+    def getNaYin(self):
+        """
+        获取纳音
+        :return: 纳音
+        """
+        return LunarUtil.NAYIN.get(self.getGanZhi())
+
+    
